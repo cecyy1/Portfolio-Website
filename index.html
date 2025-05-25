@@ -3,10 +3,15 @@
 <html>
     <head>
         <title>Portfolio </title>
+        <link rel="stylesheet" href="style.css">
+
 
     </head>
     <body>
-        <h1> Cecilia Martinez</h1>
+        <!--Header-->
+        <header class="sticky-header">
+            <h1><span class="port">Port</span><span class="folio">folio</span></h1>
+
         <nav>
             <ul>
               <li><a href="#home">Home</a></li>
@@ -16,51 +21,128 @@
               <li><a href="#contact">Contact</a></li>
             </ul>
         </nav> 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hi there, I'm a Software Developer with a string foundation in Computer Science and hands-on
-                experience in building real-world projects. I recently earned my degreee and am now focused on applying my 
-                skills in a professionla setting
-            </p>
-        </section>
+    </header>
 
-        </section id="Projects">
-        <h2>Projects</h2>
-        <p><strong>Real Estate Web App (Zillow-style)</strong> — Team Project, HTML/CSS/JS</p>
-        <ul>
-            <li>Collaborated on a property listing site with search, filter, and save features.</li>
-            <li>Designed responsive UI and integrated property detail/map views.</li>
-            <li>Used JavaScript for dynamic filtering and ensured cross-browser support.</li>
-        </ul>
-        <p><strong>3D Car Game in Unity - Rocky Road</strong> — Solo Project, Unity/C#</p>
-        <ul>
-            <li>Developed 3D car game with rock-avoidance mechanics.</li>
-            <li>Added difficulty levels, customization, game modes, game dynamics etc.</li>
-            <li>Designed polished UI with rotating car preview and a main menu display.</li>
-        </ul>
-        <p><strong>Python Portfolio</strong> — Solo Project, Python</p>
-        <ul>
-            <li>Created Python tools for automation, file handling, and logic games.</li>
-            <li>Emphasized clear structure, readability, and Git version control.</li>
-        </ul>
+    <!-- Home -->
+    <section id="home">
+        <div class="home-container">
+          <div class="intro-box">
+            <h2>Hello, My name is</h2>
+            <h2>
+              <span class="cecilia">Cecilia</span>
+              <span class="martinez">Martinez</span>
+            </h2>
+          </div>
+      
+          <img src="cecilia.PNG" alt="Photo of Cecilia Martinez" class="profile-pic">
+        </div>
+      </section>
+      
+  
+     
+      <!--About -->
+      <section id="about" class="about-section">
+  <div class="about-content">
+    <div class="about-text">
+      <h2 class="glow-heading">About Me</h2>
+      <p>
+        Hi there, I'm a <span class="highlight">Software Developer</span> with a strong foundation in 
+        <span class="highlight">Computer Science</span> and practical experience in full-stack projects using 
+        <span class="highlight">Python, SQL, Java, HTML, C#, and CSS</span>.
+         I'm passionate about clean, user-focused design and writing code that solves real problems.
+          After earning my degree, I'm now eager to contribute to innovative teams and continue growing as a developer.
+      </p>
+    </div>
+    <div class="about-animation">
+      <!-- Future animation goes here -->
+    </div>
+  </div>
+</section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-             <p>Java, Python, SQL, C#, Assembly, HTML, JavaScript, CSS</p>
-            </section>
+         <!--Projects-->
+         <section id="projects">
+            <h2 id="project-title">Projects</h2>
+          
+            <div class="project-card">
+              <p><strong>Real Estate Web App (Zillow-style)</strong> — Team Project, HTML/CSS/JS</p>
+              <ul>
+                <li>Collaborated on a property listing site with search, filter, and save features.</li>
+                <li>Designed responsive UI and integrated property detail/map views.</li>
+                <li>Used JavaScript for dynamic filtering and ensured cross-browser support.</li>
+              </ul>
+            </div>
+          
+            <div class="project-card">
+              <p><strong>3D Car Game in Unity - Rocky Road</strong> — Solo Project, Unity/C#</p>
+              <ul>
+                <li>Developed 3D car game with rock-avoidance mechanics.</li>
+                <li>Added difficulty levels, customization, game modes, game dynamics etc.</li>
+                <li>Designed polished UI with rotating car preview and a main menu display.</li>
+              </ul>
+            </div>
+          
+            <div class="project-card">
+              <p><strong>Python Portfolio</strong> — Solo Project, Python</p>
+              <ul>
+                <li>Created Python tools for automation, file handling, and logic games.</li>
+                <li>Emphasized clear structure, readability, and Git version control.</li>
+              </ul>
+            </div>
+          </section>
+          
 
-        
-        <section id="Contact">
-            <h2>Contact</h2>
-            <p><Strong>Email:</Strong>
-                <a href="mailto:cecyy917@gmail.com">cecyy917@gmail.com</a></p>
-            <p><strong>Github:</strong>
-                <a href="https://github.com/cecyy1" target="_blank">github.com/cecyy1 </a></p>
-            <p><strong> Phone: </Strong>
-                <a href="tel:+4243919001"> +1(424)391-9001</a></p>
-            <p><strong>Linkedin</strong>
-                <a href="https://www.linkedin.com/in/cecilia-martinez-48b97a2a4/" target="_blank"> Cecilia-Martinez</a></p>
-        </section>
+        <!-- Skills -->
+<section id="skills">
+    <div class="skills-scatter-container">
+      <h2 id="skill-title">Skills</h2>
+      <div class="skills-scatter">
+        <span class="skill" style="top: 10%; left: 20%;">
+          <img src="Icons/java.png" alt="Java" class="skill-icon"> Java
+        </span>
+        <span class="skill" style="top: 50%; left: 70%;">
+          <img src="Icons/python.png" alt="Python" class="skill-icon"> Python
+        </span>
+        <span class="skill" style="top: 30%; left: 40%;">
+          <img src="Icons/sql.png" alt="SQL" class="skill-icon"> SQL
+        </span>
+        <span class="skill" style="top: 70%; left: 15%;">
+          <img src="Icons/csharpe.png" alt="C#" class="skill-icon"> C#
+        </span>
+        <span class="skill" style="top: 20%; left: 80%;">
+          <img src="Icons/assembly.png" alt="Assembly" class="skill-icon"> Assembly
+        </span>
+        <span class="skill" style="top: 60%; left: 50%;">
+          <img src="Icons/html.png" alt="HTML" class="skill-icon"> HTML
+        </span>
+        <span class="skill" style="top: 40%; left: 5%;">
+          <img src="Icons/javascript.png" alt="JavaScript" class="skill-icon"> JavaScript
+        </span>
+        <span class="skill" style="top: 75%; left: 60%;">
+          <img src="Icons/css.png" alt="CSS" class="skill-icon"> CSS
+        </span>
+      </div>
+    </div>
+  </section>
+  
+
+        <!--contact-->
+        <section id="contact">
+            <h2 id="contact-title">Contact</h2>
+            <div class="contact-boxes">
+              <a href="mailto:cecyy917@gmail.com" class="contact-box">
+                <strong>Email</strong><br>cecyy917@gmail.com
+              </a>
+              <a href="https://github.com/cecyy1" target="_blank" class="contact-box">
+                <strong>GitHub</strong><br>github.com/cecyy1
+              </a>
+              <a href="tel:+14243919001" class="contact-box">
+                <strong>Phone</strong><br>+1 (424) 391-9001
+              </a>
+              <a href="https://www.linkedin.com/in/cecilia-martinez-48b97a2a4/" target="_blank" class="contact-box">
+                <strong>LinkedIn</strong><br>Cecilia Martinez
+              </a>
+            </div>
+          </section>
 
     </body>
     </html>
