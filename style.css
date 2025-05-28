@@ -157,11 +157,12 @@ h2 {
     box-shadow: 0 0 15px #a167b3;
     flex-shrink: 0; /* prevent image from shrinking too small */
     margin-left: 900px;
-    margin-top: -100px;
+    margin-top: -200px;
     animation: glow-box 2s ease-in-out infinite alternate;
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease;
+   
     
   }
   .profile-pic:hover {
@@ -173,8 +174,31 @@ h2 {
     100% { transform: translateY(0); }
   }
   
-  .profile-pic {
-    animation: float 3s ease-in-out infinite;
+  
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes bounceDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    80% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .drop-in {
+    animation: bounceDown 1s ease-out forwards;
   }
   
 
@@ -202,6 +226,7 @@ h2 {
     flex: 1;
     min-width:300px;
     text-align:left;
+    margin-top: -300px;
   }
 
   .glow-heading{
@@ -240,6 +265,34 @@ h2 {
     height: 300px;
   }
 
+  .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .about-text {
+    flex: 1 1 300px;
+    max-width: 600px;
+  }
+  
+  .about-image {
+    flex: 1 1 100px;
+    text-align: center;
+    margin-top: -90px;
+  }
+  
+  .about-photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid #a167b3;
+    box-shadow: 0 0 15px #a167b3;
+  }
+  
+
   /*PROJECTS styling*/
 
   #projects{
@@ -263,7 +316,9 @@ h2 {
     margin-bottom:30px;
     border-radius:12px;
     box-shadow:0 0 10px #a167b3;
-    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
   }
 
   .project-card:hover {
@@ -306,6 +361,18 @@ h2 {
     transform: translate3d(30px);
     animation: slideFadeIn 1.5s ease-out forwards, glowPulse 3s ease-in-out infinite;
 
+  }
+  .project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: bounceUp 0.6s ease forwards;
+  }
+  
+  @keyframes bounceUp {
+    0%   { transform: translateY(50px); }
+    60%  { transform: translateY(-10px); }
+    80%  { transform: translateY(5px); }
+    100% { transform: translateY(0); }
   }
 
   /* Slide and fade in animation */
@@ -388,8 +455,9 @@ h2 {
           0 0 8px #b290d6;                        /* soft purple glow */
         margin-top: -110px;
         animation: floatGlow 4s ease-in-out infinite alternate;
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-      }
+        transition: transform 1s ease, opacity 1s ease;
+        opacity: 0;
+    }
       
 
       .skill:hover {
@@ -403,6 +471,11 @@ h2 {
         height: 28px;
         margin-right: 8px;
       }
+
+      .skill.entered {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
       
       /* Float animation (optional) */
       @keyframes float {
@@ -424,7 +497,8 @@ h2 {
             2px 2px 6px rgba(255, 255, 255, 0.7),
             0 0 9px #cdb3e6;
         }
-      }      
+      }
+      
       
     
     @keyframes glowPulse {
@@ -479,11 +553,45 @@ h2 {
         font-size: 1.1rem;
         box-shadow: 0 0 10px #00ffff40;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;              
+        transform: translateX(0);
       }
       
       .contact-box:hover {
         transform: translateY(-5px);
         box-shadow: 0 0 15px #f8daff;
         background-color: #1a1a1a;
+      }
+      @keyframes slideInLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(-100%) translateY(-30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0) translateY(0);
+        }
+      }
+      
+      @keyframes slideInRight {
+        0% {
+          opacity: 0;
+          transform: translateX(100%) translateY(-30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0) translateY(0);
+        }
+      }
+      
+      @keyframes slideInTitle {
+        0% {
+          opacity: 0;
+          transform: translateX(-1000px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
       
