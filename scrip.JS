@@ -27,50 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(document.querySelector("#home"));
   });
   
-// For About section
-const aboutSection = document.getElementById("about");
-const aboutText = document.getElementById("about-typed");
-const originalHTML = aboutText.innerHTML;
 
-let typingInterval;
-
-function typeHTMLText(element, html) {
-  let i = 0;
-  let tag = false;
-  let buffer = "";
-  clearInterval(typingInterval);
-
-  typingInterval = setInterval(() => {
-    let char = html[i];
-    buffer += char;
-    i++;
-
-    // Detect opening/closing of tags so it don't break <span>
-    if (char === "<") tag = true;
-    if (char === ">") tag = false;
-
-    if (!tag || char === ">") {
-      element.innerHTML = buffer;
-    }
-
-    if (i >= html.length) {
-      clearInterval(typingInterval);
-    }
-  }, 10); // Typing speed
-}
-
-const aboutObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        typeHTMLText(aboutText, originalHTML);
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
-
-aboutObserver.observe(aboutSection);
 
 // For Projects section
 const projectCards = document.querySelectorAll('.project-card');
@@ -175,36 +132,6 @@ function animateSkills() {
   
   observer.observe(skillsSection);
 
-  // for contact section 
-  window.addEventListener('DOMContentLoaded', () => {
-    const contactSection = document.getElementById('contact');
-    const boxes = contactSection.querySelectorAll('.contact-box');
-  
-    // Helper to add animation classes alternating left/right
-    function animateBoxes() {
-      boxes.forEach((box, i) => {
-        box.style.opacity = '0';         // reset opacity before anim
-        box.style.animation = 'none';    // reset animation to allow replay
-  
-        // tiny delay before applying animation to restart it
-        setTimeout(() => {
-          box.style.animation = (i % 2 === 0 ? 'slideInRight' : 'slideInLeft') + ' 0.8s forwards ease';
-        }, i * 200);
-      });
-    }
-  
-    // Use IntersectionObserver to detect when #contact is in view
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateBoxes();
-        }
-      });
-    }, {
-      threshold: 0.5  // at least 50% visible triggers animation
-    });
-  
-    observer.observe(contactSection);
-  });
-  
+
+
   
