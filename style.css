@@ -175,6 +175,16 @@ body::before {
   z-index: -2; /* behind the lottie */
 }
 
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;     /* Full screen width */
+  height: 100vh;    /* Full screen height */
+  z-index: -1;      /* Send behind everything */
+  object-fit: cover; /* Stretch and crop to fill */
+  pointer-events: none; /* So you can still click on things */
+}
 
 
 
@@ -323,7 +333,6 @@ h2 {
   flex: 1 1 100px;
   text-align: center;
   margin-top: -90px;
-  /* remove image without collapsing layout */
   min-height: 250px;
 }
 
@@ -367,7 +376,7 @@ h2 {
     color: antiquewhite;
   }
   
-  /* Project title style — like About Me, no glow */
+  
   #project-title {
     font-size: 40px;
     text-align: center;
@@ -462,7 +471,7 @@ h2 {
 #skill-title {
   font-size: 60px;
   font-family: 'Great Vibes', cursive;
-  color: #999999;  /* same gray as About Me */
+  color: #999999;  
   margin-bottom: 40px;
   margin-top: 0;
   text-shadow: none;
